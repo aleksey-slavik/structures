@@ -16,6 +16,9 @@ public class Demo {
         System.out.println("Bubble sort:");
         printResults(new BubbleSort());
 
+        System.out.println("Two direction bubble sort:");
+        printResults(new TwoDirectionBubbleSort());
+
         System.out.println("Select sort:");
         printResults(new SelectSort());
 
@@ -30,10 +33,18 @@ public class Demo {
         System.out.println("Array after sorting:");
         sort.sort();
         sort.print();
-        System.out.println("Sorting big array:");
+        System.out.print("Sorting random big array: ");
         sort.generate(BIG_LENGTH, BIG_BOUND);
         sort.sort();
-        System.out.println("Time to sort: " + sort.getTime() + " ms");
+        System.out.println(sort.getTime() + " ms");
+        System.out.print("Sorting incremental big array: ");
+        sort.generate(BIG_LENGTH, true);
+        sort.sort();
+        System.out.println(sort.getTime() + " ms");
+        System.out.print("Sorting decreasing big array: ");
+        sort.generate(BIG_LENGTH, false);
+        sort.sort();
+        System.out.println(sort.getTime() + " ms");
         System.out.println("--------------------------------------------------");
     }
 }

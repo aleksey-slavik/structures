@@ -2,7 +2,7 @@ package com.structures.sort.base;
 
 import java.util.Random;
 
-public abstract class SortBase{
+public abstract class SortBase {
 
     protected int[] array;
 
@@ -18,6 +18,16 @@ public abstract class SortBase{
 
         for (int i = 0; i < length; i++) {
             array[i] = random.nextInt(bound);
+        }
+    }
+
+    public void generate(int length, boolean direction) {
+        for (int i = 0; i < length; i++) {
+            if (direction) {
+                array[i] = i;
+            } else {
+                array[i] = length - i;
+            }
         }
     }
 

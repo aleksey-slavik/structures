@@ -10,7 +10,7 @@ public class InsertSort extends SortBase {
             int in = out;
 
             while (in > 0 && array[in - 1] >= temp) {
-                array[in] =  array[in - 1];
+                array[in] = array[in - 1];
                 in--;
             }
 
