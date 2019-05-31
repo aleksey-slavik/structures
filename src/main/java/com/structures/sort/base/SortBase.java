@@ -10,6 +10,8 @@ public abstract class SortBase {
 
     private long time;
 
+    private boolean isSorted = false;
+
     private Random random = new Random();
 
     public void generate(int length, int bound) {
@@ -38,6 +40,13 @@ public abstract class SortBase {
         System.out.println();
     }
 
+    public int median() {
+        if (!isSorted) {
+            sortArray();
+        }
+        return array[length / 2];
+    }
+
     public long getTime() {
         return time;
     }
@@ -46,6 +55,7 @@ public abstract class SortBase {
         long current = System.currentTimeMillis();
         sortArray();
         time = System.currentTimeMillis() - current;
+        isSorted = true;
     }
 
     protected abstract void sortArray();
