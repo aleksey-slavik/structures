@@ -1,4 +1,4 @@
-package com.structures.sort;
+package com.structures.sort.insert;
 
 import com.structures.sort.base.SortBase;
 
@@ -11,10 +11,15 @@ public class InsertSort extends SortBase {
 
             while (in > 0 && array[in - 1] >= temp) {
                 array[in] = array[in - 1];
+                comparison++;
+                assignment++;
                 in--;
             }
 
+            comparison++;
+
             array[in] = temp;
+            assignment++;
         }
     }
 }

@@ -1,6 +1,11 @@
 package com.structures.sort;
 
 import com.structures.sort.base.SortBase;
+import com.structures.sort.bubble.BubbleSort;
+import com.structures.sort.bubble.OddEvenSort;
+import com.structures.sort.bubble.TwoDirectionBubbleSort;
+import com.structures.sort.insert.InsertSort;
+import com.structures.sort.select.SelectSort;
 
 public class Demo {
 
@@ -40,18 +45,24 @@ public class Demo {
         System.out.println("Remove dublicates:");
         sort.removeDuplicates();
         sort.print();
-        System.out.print("Sorting random big array: ");
+        System.out.println("Sorting random big array:");
         sort.generate(BIG_LENGTH, BIG_BOUND);
         sort.sort();
-        System.out.println(sort.getTime() + " ms");
-        System.out.print("Sorting incremental big array: ");
+        System.out.println("Time: " + sort.getTime() + " ms");
+        System.out.println("Comparisons: " + sort.getComparison());
+        System.out.println("Assignments: " + sort.getAssignment());
+        System.out.println("Sorting incremental big array: ");
         sort.generate(BIG_LENGTH, true);
         sort.sort();
-        System.out.println(sort.getTime() + " ms");
-        System.out.print("Sorting decreasing big array: ");
+        System.out.println("Time: " + sort.getTime() + " ms");
+        System.out.println("Comparisons: " + sort.getComparison());
+        System.out.println("Assignments: " + sort.getAssignment());
+        System.out.println("Sorting decreasing big array: ");
         sort.generate(BIG_LENGTH, false);
         sort.sort();
-        System.out.println(sort.getTime() + " ms");
+        System.out.println("Time: " + sort.getTime() + " ms");
+        System.out.println("Comparisons: " + sort.getComparison());
+        System.out.println("Assignments: " + sort.getAssignment());
         System.out.println("--------------------------------------------------");
     }
 }

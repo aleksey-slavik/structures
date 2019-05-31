@@ -1,4 +1,4 @@
-package com.structures.sort;
+package com.structures.sort.bubble;
 
 import com.structures.sort.base.SortBase;
 
@@ -11,12 +11,14 @@ public class OddEvenSort extends SortBase {
                     if (array[j] > array[j + 1]) {
                         swap(j, j + 1);
                     }
+                    comparison++;
                 }
             } else {
                 for (int j = 1; j < length && length - j > 1; j += 2) {
                     if (array[j] > array[j + 1]) {
                         swap(j, j + 1);
                     }
+                    comparison++;
                 }
             }
         }

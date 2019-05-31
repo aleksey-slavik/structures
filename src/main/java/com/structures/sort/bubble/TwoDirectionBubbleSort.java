@@ -1,4 +1,4 @@
-package com.structures.sort;
+package com.structures.sort.bubble;
 
 import com.structures.sort.base.SortBase;
 
@@ -10,11 +10,13 @@ public class TwoDirectionBubbleSort extends SortBase {
                 if (array[i] > array[i + 1]) {
                     swap(i, i + 1);
                 }
+                comparison++;
             }
             for (int i = right - 1; i > left; i--) {
                 if (array[i - 1] > array[i]) {
                     swap(i, i - 1);
                 }
+                comparison++;
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.structures.sort;
+package com.structures.sort.select;
 
 import com.structures.sort.base.SortBase;
 
@@ -11,7 +11,10 @@ public class SelectSort extends SortBase {
             for (int in = out + 1; in < length; in++) {
                 if (array[in] < array[min]) {
                     min = in;
+                    assignment++;
                 }
+
+                comparison++;
             }
 
             swap(out, min);

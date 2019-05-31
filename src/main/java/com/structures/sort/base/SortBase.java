@@ -8,6 +8,10 @@ public abstract class SortBase {
 
     protected int length;
 
+    protected int comparison = 0;
+
+    protected int assignment = 0;
+
     private long time;
 
     private boolean isSorted = false;
@@ -21,6 +25,9 @@ public abstract class SortBase {
         for (int i = 0; i < length; i++) {
             array[i] = random.nextInt(bound);
         }
+
+        comparison = 0;
+        assignment = 0;
     }
 
     public void generate(int length, boolean direction) {
@@ -31,6 +38,9 @@ public abstract class SortBase {
                 array[i] = length - i;
             }
         }
+
+        comparison = 0;
+        assignment = 0;
     }
 
     public void print() {
@@ -72,6 +82,14 @@ public abstract class SortBase {
         return time;
     }
 
+    public int getComparison() {
+        return comparison;
+    }
+
+    public int getAssignment() {
+        return assignment;
+    }
+
     public void sort() {
         long current = System.currentTimeMillis();
         sortArray();
@@ -85,5 +103,6 @@ public abstract class SortBase {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
+        assignment+=2;
     }
 }

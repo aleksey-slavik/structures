@@ -1,4 +1,4 @@
-package com.structures.sort;
+package com.structures.sort.bubble;
 
 import com.structures.sort.base.SortBase;
 
@@ -10,6 +10,8 @@ public class BubbleSort extends SortBase {
                 if (array[in] > array[in + 1]) {
                     swap(in, in + 1);
                 }
+
+                comparison++;
             }
         }
     }
