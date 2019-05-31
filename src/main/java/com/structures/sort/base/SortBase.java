@@ -47,6 +47,27 @@ public abstract class SortBase {
         return array[length / 2];
     }
 
+    public void removeDuplicates() {
+        if (!isSorted) {
+            sortArray();
+        }
+
+        int[] temp = new int[length];
+        int index = 0;
+        temp[0] = array[0];
+
+        for (int i = 0; i < length - 1; i++) {
+            if (temp[index] != array[i]) {
+                index++;
+                temp[index] = array[i];
+            }
+        }
+
+        length = index + 1;
+        array = new int[length];
+        System.arraycopy(temp, 0, array, 0, length);
+    }
+
     public long getTime() {
         return time;
     }

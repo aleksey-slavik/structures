@@ -34,6 +34,9 @@ public class Demo {
         sort.sort();
         sort.print();
         System.out.println("Median: " + sort.median());
+        System.out.println("Remove dublicates:");
+        sort.removeDuplicates();
+        sort.print();
         System.out.print("Sorting random big array: ");
         sort.generate(BIG_LENGTH, BIG_BOUND);
         sort.sort();
