@@ -19,6 +19,9 @@ public class Demo {
         System.out.println("Two direction bubble sort:");
         printResults(new TwoDirectionBubbleSort());
 
+        System.out.println("Odd even sort:");
+        printResults(new OddEvenSort());
+
         System.out.println("Select sort:");
         printResults(new SelectSort());
 
