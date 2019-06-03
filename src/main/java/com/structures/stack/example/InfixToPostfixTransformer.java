@@ -2,7 +2,7 @@ package com.structures.stack.example;
 
 import com.structures.stack.base.Stack;
 
-public class InfixToPostfix {
+public class InfixToPostfixTransformer {
 
     private String input;
 
@@ -10,7 +10,7 @@ public class InfixToPostfix {
 
     private Stack<Character> stack;
 
-    public InfixToPostfix(String input) {
+    public InfixToPostfixTransformer(String input) {
         this.input = input;
         output = new StringBuilder();
         stack = new Stack<Character>(input.length());
