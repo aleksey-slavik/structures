@@ -1,4 +1,4 @@
-package com.structures.queue;
+package com.structures.queue.base;
 
 public interface QueueBase<T> {
 

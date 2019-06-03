@@ -2,6 +2,7 @@ package com.structures.stack;
 
 import com.structures.stack.base.EmptyStackException;
 import com.structures.stack.example.BracketChecker;
+import com.structures.stack.example.InfixToPostfix;
 import com.structures.stack.example.InvalidBracketException;
 import com.structures.stack.example.StringReverser;
 
@@ -31,6 +32,14 @@ public class Demo {
         } catch (InvalidBracketException e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("--------------------------------------------------");
+
+        System.out.println("Infix to postfix demo:");
+        System.out.println("Enter infix string:");
+        input = readLine();
+        InfixToPostfix transformer = new InfixToPostfix(input);
+        System.out.println("Postfix string:");
+        System.out.println(transformer.transform());
         System.out.println("--------------------------------------------------");
     }
 

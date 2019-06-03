@@ -1,4 +1,5 @@
-package com.structures.queue;
+package com.structures.queue.base;
+
 
 public class QueueWithCounter<T> implements QueueBase<T> {
 
