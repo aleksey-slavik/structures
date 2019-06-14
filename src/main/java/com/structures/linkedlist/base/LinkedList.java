@@ -1,8 +1,8 @@
-package com.structures.linkedlist;
+package com.structures.linkedlist.base;
 
 public class LinkedList<T> {
 
-    private LinkedListItem<T> item;
+    private NodeWithIndex<T> item;
 
     public LinkedList() {
         item = null;
@@ -13,19 +13,19 @@ public class LinkedList<T> {
     }
 
     public void insert(int index, T value) {
-        LinkedListItem<T> newItem = new LinkedListItem<T>(index, value);
+        NodeWithIndex<T> newItem = new NodeWithIndex<T>(index, value);
         newItem.next = item;
         item = newItem;
     }
 
-    public LinkedListItem<T> find(int key) {
-        LinkedListItem<T> current = item;
+    public NodeWithIndex<T> find(int key) {
+        NodeWithIndex<T> current = item;
 
         while (current.index != key) {
-            if (current.next == null) {
+            if (!current.hasNext()) {
                 return null;
             } else {
-                current = current.next;
+                current = (NodeWithIndex<T>) current.next;
             }
         }
 
@@ -33,38 +33,38 @@ public class LinkedList<T> {
     }
 
     public void delete(int key) {
-        LinkedListItem<T> current = item;
-        LinkedListItem<T> previous = item;
+        NodeWithIndex<T> current = item;
+        NodeWithIndex<T> previous = item;
 
         while (current.index != key) {
-            if (current.next == null) {
+            if (!current.hasNext()) {
                 return;
             } else {
                 previous = current;
-                current = current.next;
+                current = (NodeWithIndex<T>) current.next;
             }
         }
 
         if (current == item) {
-            item = item.next;
+            item = (NodeWithIndex<T>) item.next;
         } else {
             previous.next = current.next;
         }
     }
 
     public void delete() {
-        item = item.next;
+        item = (NodeWithIndex<T>) item.next;
     }
 
     @Override
     public String toString() {
-        LinkedListItem<T> current = item;
+        NodeWithIndex<T> current = item;
         StringBuilder builder = new StringBuilder();
         builder.append("[");
 
         while (current != null) {
             builder.append(current).append(", ");
-            current = current.next;
+            current = (NodeWithIndex<T>) current.next;
         }
 
         return builder

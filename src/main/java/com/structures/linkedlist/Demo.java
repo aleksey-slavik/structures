@@ -1,5 +1,8 @@
 package com.structures.linkedlist;
 
+import com.structures.linkedlist.base.FirstLastLinkedList;
+import com.structures.linkedlist.base.LinkedList;
+
 public class Demo {
 
     public static void main(String[] args) {
@@ -12,5 +15,18 @@ public class Demo {
         System.out.println(linkedList.find(3));
         linkedList.delete(2);
         System.out.println(linkedList);
+
+        System.out.println("-----------------------------------");
+        FirstLastLinkedList<Integer> firstLastLinkedList = new FirstLastLinkedList<Integer>();
+        firstLastLinkedList.insertFirst(22);
+        firstLastLinkedList.insertFirst(44);
+        firstLastLinkedList.insertFirst(66);
+        firstLastLinkedList.insertLast(11);
+        firstLastLinkedList.insertLast(33);
+        firstLastLinkedList.insertLast(55);
+        System.out.println(firstLastLinkedList);
+        firstLastLinkedList.deleteFirst();
+        firstLastLinkedList.deleteFirst();
+        System.out.println(firstLastLinkedList);
     }
 }
