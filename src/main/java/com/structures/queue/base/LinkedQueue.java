@@ -14,8 +14,8 @@ public class LinkedQueue<T> {
         list.insertLast(value);
     }
 
-    public T remove() {
-        return list.deleteFirst();
+    public void remove() {
+        list.deleteFirst();
     }
 
     public boolean isEmpty() {

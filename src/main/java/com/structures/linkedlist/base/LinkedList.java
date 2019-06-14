@@ -18,10 +18,8 @@ public class LinkedList<T> {
         item = newItem;
     }
 
-    public T delete() {
-        Node<T> temp = item;
+    public void delete() {
         item = item.next;
-        return temp.value;
     }
 
     @Override

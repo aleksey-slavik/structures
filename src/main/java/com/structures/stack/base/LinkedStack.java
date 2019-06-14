@@ -14,8 +14,8 @@ public class LinkedStack<T> {
         list.insert(value);
     }
 
-    public T pop() {
-        return list.delete();
+    public void pop() {
+        list.delete();
     }
 
     public boolean isEmpty() {
