@@ -38,12 +38,15 @@ public class FirstLastLinkedList<T> {
         last = node;
     }
 
-    public void deleteFirst() {
+    public T deleteFirst() {
+        T temp = first.value;
+
         if (first.next == null) {
             last = null;
         }
 
         first = first.next;
+        return temp;
     }
 
     @Override
