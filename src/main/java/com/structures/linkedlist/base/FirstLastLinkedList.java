@@ -50,12 +50,15 @@ public class FirstLastLinkedList<T> {
     public String toString() {
         Node<T> current = first;
         StringBuilder builder = new StringBuilder();
+        builder.append("[");
 
         while (current != null) {
-            builder.append(current);
+            builder.append(current).append(", ");
             current = current.next;
         }
 
-        return builder.toString();
+        return builder.delete(builder.length() - 2, builder.length())
+                .append("]")
+                .toString();
     }
 }

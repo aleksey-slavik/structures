@@ -2,7 +2,7 @@ package com.structures.linkedlist.base;
 
 public class LinkedList<T> {
 
-    private NodeWithIndex<T> item;
+    private Node<T> item;
 
     public LinkedList() {
         item = null;
@@ -12,63 +12,30 @@ public class LinkedList<T> {
         return item == null;
     }
 
-    public void insert(int index, T value) {
-        NodeWithIndex<T> newItem = new NodeWithIndex<T>(index, value);
+    public void insert(T value) {
+        Node<T> newItem = new Node<T>(value);
         newItem.next = item;
         item = newItem;
     }
 
-    public NodeWithIndex<T> find(int key) {
-        NodeWithIndex<T> current = item;
-
-        while (current.index != key) {
-            if (!current.hasNext()) {
-                return null;
-            } else {
-                current = (NodeWithIndex<T>) current.next;
-            }
-        }
-
-        return current;
-    }
-
-    public void delete(int key) {
-        NodeWithIndex<T> current = item;
-        NodeWithIndex<T> previous = item;
-
-        while (current.index != key) {
-            if (!current.hasNext()) {
-                return;
-            } else {
-                previous = current;
-                current = (NodeWithIndex<T>) current.next;
-            }
-        }
-
-        if (current == item) {
-            item = (NodeWithIndex<T>) item.next;
-        } else {
-            previous.next = current.next;
-        }
-    }
-
-    public void delete() {
-        item = (NodeWithIndex<T>) item.next;
+    public T delete() {
+        Node<T> temp = item;
+        item = item.next;
+        return temp.value;
     }
 
     @Override
     public String toString() {
-        NodeWithIndex<T> current = item;
+        Node<T> current = item;
         StringBuilder builder = new StringBuilder();
         builder.append("[");
 
         while (current != null) {
             builder.append(current).append(", ");
-            current = (NodeWithIndex<T>) current.next;
+            current = current.next;
         }
 
-        return builder
-                .delete(builder.length() - 2, builder.length())
+        return builder.delete(builder.length() - 2, builder.length())
                 .append("]")
                 .toString();
     }

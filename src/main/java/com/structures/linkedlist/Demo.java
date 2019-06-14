@@ -1,20 +1,20 @@
 package com.structures.linkedlist;
 
 import com.structures.linkedlist.base.FirstLastLinkedList;
-import com.structures.linkedlist.base.LinkedList;
+import com.structures.linkedlist.base.IndexLinkedList;
 
 public class Demo {
 
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new LinkedList<Integer>();
-        linkedList.insert(1, 129);
-        linkedList.insert(2, 243);
-        linkedList.insert(3, 454);
-        linkedList.insert(4, 345);
-        System.out.println(linkedList);
-        System.out.println(linkedList.find(3));
-        linkedList.delete(2);
-        System.out.println(linkedList);
+        IndexLinkedList<Integer> indexLinkedList = new IndexLinkedList<Integer>();
+        indexLinkedList.insert(1, 129);
+        indexLinkedList.insert(2, 243);
+        indexLinkedList.insert(3, 454);
+        indexLinkedList.insert(4, 345);
+        System.out.println(indexLinkedList);
+        System.out.println(indexLinkedList.find(3));
+        indexLinkedList.delete(2);
+        System.out.println(indexLinkedList);
 
         System.out.println("-----------------------------------");
         FirstLastLinkedList<Integer> firstLastLinkedList = new FirstLastLinkedList<Integer>();
