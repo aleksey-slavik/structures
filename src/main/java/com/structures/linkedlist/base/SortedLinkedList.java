@@ -2,29 +2,30 @@ package com.structures.linkedlist.base;
 
 public class SortedLinkedList<T extends Comparable> extends LinkedList<T> {
 
-    public SortedLinkedList(Node<T>[] list) {
+    public SortedLinkedList(T[] list) {
         super();
 
-        for (Node<T> item : list) {
+        for (T item : list) {
             insert(item);
         }
     }
 
-    public void insert(Node<T> node) {
+    public void insert(T value) {
         Node<T> previous = null;
         Node<T> current = item;
+        Node<T> temp = new Node<T>(value);
 
-        while (current != null && node.value.compareTo(current.value) > 0) {
+        while (current != null && value.compareTo(current.value) > 0) {
             previous = current;
             current = current.next;
         }
 
         if (previous == null) {
-            item = node;
+            item = temp;
         } else {
-            previous.next = node;
+            previous.next = temp;
         }
 
-        node.next = current;
+        temp.next = current;
     }
 }
