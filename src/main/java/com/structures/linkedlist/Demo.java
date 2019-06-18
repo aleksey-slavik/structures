@@ -1,8 +1,6 @@
 package com.structures.linkedlist;
 
-import com.structures.linkedlist.base.FirstLastLinkedList;
-import com.structures.linkedlist.base.IndexLinkedList;
-import com.structures.linkedlist.base.SortedIndexLinkedList;
+import com.structures.linkedlist.base.*;
 
 public class Demo {
 
@@ -24,6 +22,9 @@ public class Demo {
         sortedIndexLinkedList.insert(3, 454);
         sortedIndexLinkedList.insert(0, 345);
         System.out.println(sortedIndexLinkedList);
+        System.out.println(sortedIndexLinkedList.find(3));
+        sortedIndexLinkedList.delete(2);
+        System.out.println(sortedIndexLinkedList);
 
         System.out.println("-----------------------------------");
         FirstLastLinkedList<Integer> firstLastLinkedList = new FirstLastLinkedList<Integer>();
@@ -37,5 +38,17 @@ public class Demo {
         firstLastLinkedList.deleteFirst();
         firstLastLinkedList.deleteFirst();
         System.out.println(firstLastLinkedList);
+
+        System.out.println("-----------------------------------");
+        Node[] list = new Node[10];
+
+        for (int i = 0; i < 10; i++) {
+           list[i] = new Node<Integer>((int) (Math.random() * 99));
+            System.out.print(list[i] + ", ");
+        }
+
+        System.out.println();
+        SortedLinkedList<Integer> sortedLinkedList = new SortedLinkedList<Integer>(list);
+        System.out.println(sortedLinkedList);
     }
 }

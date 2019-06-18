@@ -1,13 +1,12 @@
 package com.structures.linkedlist.base;
 
-public class SortedIndexLinkedList<T> {
-
-    private NodeWithIndex<T> item;
+public class SortedIndexLinkedList<T> extends IndexLinkedList<T> {
 
     public SortedIndexLinkedList() {
-        item = null;
+        super();
     }
 
+    @Override
     public void insert(int index, T value) {
         NodeWithIndex<T> newItem = new NodeWithIndex<T>(index, value);
         NodeWithIndex<T> previous = null;
@@ -25,21 +24,5 @@ public class SortedIndexLinkedList<T> {
         }
 
         newItem.next = current;
-    }
-
-    @Override
-    public String toString() {
-        NodeWithIndex<T> current = item;
-        StringBuilder builder = new StringBuilder();
-        builder.append("[");
-
-        while (current != null) {
-            builder.append(current).append(", ");
-            current = (NodeWithIndex<T>) current.next;
-        }
-
-        return builder.delete(builder.length() - 2, builder.length())
-                .append("]")
-                .toString();
     }
 }

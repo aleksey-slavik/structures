@@ -2,7 +2,7 @@ package com.structures.linkedlist.base;
 
 public class IndexLinkedList<T> {
 
-    private NodeWithIndex<T> item;
+    protected NodeWithIndex<T> item;
 
     public IndexLinkedList() {
         item = null;
