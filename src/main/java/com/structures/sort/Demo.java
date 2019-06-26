@@ -5,6 +5,7 @@ import com.structures.sort.bubble.BubbleSort;
 import com.structures.sort.bubble.OddEvenSort;
 import com.structures.sort.bubble.TwoDirectionBubbleSort;
 import com.structures.sort.insert.InsertSort;
+import com.structures.sort.merge.MergeSort;
 import com.structures.sort.select.SelectSort;
 
 public class Demo {
@@ -32,6 +33,9 @@ public class Demo {
 
         System.out.println("Insert sort:");
         printResults(new InsertSort());
+
+        System.out.println("Merge sort:");
+        printResults(new MergeSort());
     }
 
     private static void printResults(SortBase sort) {
